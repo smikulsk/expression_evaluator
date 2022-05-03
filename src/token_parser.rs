@@ -23,7 +23,7 @@ pub fn parse(s: &str) -> Vec<Token> {
         if ch.is_digit(10) || ch == '.' {
             current_token.push(ch);
         } else {
-            if !current_token.is_empty() && !["s".to_owned(), "sq".to_owned(), "sqr".to_owned()].contains(&current_token) {
+            if !current_token.is_empty() && !"sqrt".starts_with(&current_token) {
                 tokens.push(Token {
                     token_type: TokenType::Numeric(current_token.parse().unwrap()),
                 });
