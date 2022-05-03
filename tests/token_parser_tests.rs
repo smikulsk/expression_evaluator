@@ -1,6 +1,4 @@
-use crate::token_parser::{Token, TokenType};
-
-use super::*;
+use expression_evaluator::token_parser::{Token, TokenType, parse};
 
 #[test]
 pub fn parse_empty_string_returns_empty_list() {
